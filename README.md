@@ -102,4 +102,15 @@ Now we can use OpenSSL to generate a new private key, then replace those values 
 Folder `dsakeys` contains private key computed during this challenge. Your can use it freely to sign a check new files.
 
 Folder `new_message` contains new file signed using this generated private key as an example of our success.
- 
+
+### Task 1
+Given a file containing 2B random number on each line find quality of the random number generator which created these outputs. Preferably do so using Statistical Test Suite (`STS`) created by `NIST`. 
+
+#### Resources
+* `8mhz.biz` - list of generated 2B values
+* `datagen.sh` - script which takes `8mhz.biz` as an input and produces 16 files in the `data` directory. Each file contains values for a single bit (single row).
+* `sts-2_1_2.zip` - test suite produced by the NIST.
+* `nistspecialpublication800-22r1a.pdf` - a documentation for the suite
+
+Results of the testing may be found in the `report.{pdf,odt}`
+
