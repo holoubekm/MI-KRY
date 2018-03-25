@@ -1,0 +1,7 @@
+openssl dsaparam 1024 > dsaparam.pem
+openssl gendsa dsaparam.pem > dsakey.pem
+openssl dsa -pubout  < dsakey.pem > dsapub.pem
+openssl dsa -noout -text -in dsakey.pem
+openssl dsa -noout -text -pubin -in dsapub.pem
+openssl dgst -sign dsakey.pem < test.txt > test.sign
+openssl dgst -sha1 -verify dsapub.pem -signature test.sign < test.txt
